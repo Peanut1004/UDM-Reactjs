@@ -32,15 +32,15 @@ function Slider() {
         }
         if (
           userIndex === index - 1 ||
-          (userIndex === users.length - 1 && index === 0)
+          (index === 0 && userIndex === users.length - 1)
         ) {
-          position = "lastIndex";
+          position = "lastSlider";
         }
         return (
-          <div key={userIndex} className={position}>
+          <article key={userIndex} className={position}>
             <h3>{user.name}</h3>
             <p>{user.age}</p>
-          </div>
+          </article>
         );
       })}
 
