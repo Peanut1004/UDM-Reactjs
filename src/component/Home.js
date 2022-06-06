@@ -1,26 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import ProductList from './ProductList';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import FormPost from "./FormPost";
 
-
-
-const Home = () => {
-  const [peoples, setPeoples] = useState([]);
-
+function Home() {
+  const [data, setData] = useState([]);
+  const fetchData = async () => {
+    const response = await axios.get(`http://localhost:3000/people`);
+    setData(response.data);
+  };
   useEffect(() => {
-    fetch('http://localhost:3000/people')
-      .then(res => res.json())
-      .then(data => setPeoples(data))
-  }, [])
+    console.log(data);
+    fetchData();
+  }, []);
 
-  // console.log(peoples)
-  
+  const removeItems = (id) => {
+    axios.delete(`http://localhost:3000/people/${id}`);
+    let newData = data.filter((el) => el.id !== id);
+    setData(newData);
+  };
+
   return (
-    <div className='box-people-list'>{peoples.map((people, index) => (
-      <ProductList key={index} {...people} />
-    ))}</div>
-  )
+    <div>
+      {data.map((el) => (
+        <div>
+          <img src={el.image} alt="images" />
+          <h3 key={el.id}>{el.name}</h3>
+          <p>{el.price}</p>
+          <button onClick={() => removeItems(el.id)}>Remove</button>
+        </div>
+      ))}
+      <FormPost data={data} setData={setData} />
+    </div>
+  );
 }
 
-
-export default Home
+export default Home;

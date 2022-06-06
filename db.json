@@ -19,10 +19,46 @@
       "image": "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg"
     },
     {
-      "id": 4,
-      "name": "linuss",
-      "age": 36,
-      "image": "Image"
+      "name": "123",
+      "age": "123",
+      "image": "123",
+      "id": 4
+    },
+    {
+      "name": "s",
+      "age": "s",
+      "image": "s",
+      "id": 5
+    },
+    {
+      "name": "s",
+      "age": "s",
+      "image": "s",
+      "id": 6
+    },
+    {
+      "name": "s",
+      "age": "s",
+      "image": "s",
+      "id": 7
+    },
+    {
+      "name": "s",
+      "age": "s",
+      "image": "s",
+      "id": 8
+    },
+    {
+      "name": "1",
+      "age": "1",
+      "image": "1",
+      "id": 9
+    },
+    {
+      "name": "12",
+      "age": "12",
+      "image": "12",
+      "id": 10
     }
   ]
 }
